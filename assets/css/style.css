@@ -992,6 +992,7 @@ footer {
     margin-top: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    -webkit-overflow-scrolling: touch;
 }
 
 table {
@@ -1033,31 +1034,83 @@ table td {
 
 /* Mobile responsive tables */
 @media (max-width: 768px) {
+    .container {
+        padding: 0.5rem;
+    }
+    
+    .card {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
     .table-wrapper {
-        margin: 1rem -1rem 0 -1rem; /* Extend to card edges */
+        margin: 1rem -1rem 0 -1rem;
         border-radius: 0;
+        box-shadow: none;
+        border: 1px solid #ddd;
     }
     
     table {
-        font-size: 0.9rem;
-        min-width: 500px;
+        font-size: 0.85rem;
+        min-width: 650px;
     }
     
     table th,
     table td {
-        padding: 8px 10px;
+        padding: 8px 12px;
     }
     
-    /* Make email columns more readable */
-    table td:nth-child(3) {
-        min-width: 200px;
+    table th {
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+    
+    /* Make specific columns more readable */
+    table td:nth-child(1) { /* Club column */
+        min-width: 100px;
+        font-weight: 600;
+    }
+    
+    table td:nth-child(2) { /* Name column */
+        min-width: 150px;
+    }
+    
+    table td:nth-child(3) { /* Email column */
+        min-width: 250px;
+        font-size: 0.8rem;
+    }
+    
+    table td:nth-child(4) { /* Contact column */
+        min-width: 120px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
+    .container {
+        padding: 0.25rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+        border-radius: 6px;
+    }
+    
+    .card h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+        text-align: center;
+    }
+    
+    .table-wrapper {
+        margin: 0.75rem -0.75rem 0 -0.75rem;
+        border-radius: 0;
+    }
+    
     table {
-        font-size: 0.8rem;
-        min-width: 450px;
+        font-size: 0.75rem;
+        min-width: 600px;
     }
     
     table th,
@@ -1065,31 +1118,108 @@ table td {
         padding: 6px 8px;
     }
     
-    /* Adjust column widths for mobile */
-    table th:first-child,
-    table td:first-child {
+    table th {
+        font-size: 0.7rem;
+        padding: 8px 8px;
+    }
+    
+    /* Adjust column widths for very small screens */
+    table td:nth-child(1) {
         min-width: 80px;
+        font-weight: 600;
     }
     
-    table th:nth-child(2),
     table td:nth-child(2) {
-        min-width: 120px;
+        min-width: 140px;
     }
     
-    table th:nth-child(3),
     table td:nth-child(3) {
-        min-width: 180px;
+        min-width: 200px;
+        font-size: 0.7rem;
     }
     
-    table th:nth-child(4),
     table td:nth-child(4) {
-        min-width: 100px;
+        min-width: 110px;
+    }
+    
+    /* Better line spacing for mobile */
+    table td {
+        line-height: 1.4;
     }
 }
 
-/* Card spacing adjustment for mobile */
+/* Add scroll indicator for mobile */
 @media (max-width: 768px) {
-    .card {
+    .table-wrapper::after {
+        content: "← Scroll to see more →";
+        display: block;
+        text-align: center;
+        font-size: 0.7rem;
+        color: #666;
+        padding: 0.5rem;
+        background-color: #f0f0f0;
+        border-top: 1px solid #ddd;
+    }
+    
+    .table-wrapper::-webkit-scrollbar {
+        height: 8px;
+    }
+    
+    .table-wrapper::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+    
+    .table-wrapper::-webkit-scrollbar-thumb {
+        background: #004080;
+        border-radius: 4px;
+    }
+    
+    .table-wrapper::-webkit-scrollbar-thumb:hover {
+        background: #003060;
+    }
+}
+
+/* Alternative mobile card layout for very small screens */
+@media (max-width: 480px) {
+    /* Hide table on very small screens and show card layout instead */
+    .mobile-card-layout {
+        display: none;
+    }
+    
+    .contact-item {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 6px;
         padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-item h4 {
+        color: #004080;
+        margin: 0 0 0.5rem 0;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    
+    .contact-item .contact-detail {
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .contact-item .contact-label {
+        font-weight: 600;
+        color: #333;
+        display: inline-block;
+        min-width: 60px;
+    }
+    
+    .contact-item .contact-value {
+        color: #555;
+        word-break: break-word;
+    }
+    
+    .contact-item:last-child {
+        margin-bottom: 0;
     }
 }
