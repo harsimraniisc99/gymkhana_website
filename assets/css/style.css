@@ -500,13 +500,18 @@ footer {
 /* Hero Section */
 .hero-section {
     position: relative;
-    min-height: 80vh;
+    width: 100vw;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     margin: 0;
     padding: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 .hero-background-slideshow {
@@ -527,10 +532,10 @@ footer {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: scroll; /* Changed from fixed for mobile compatibility */
+    background-attachment: scroll;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
-    -webkit-transform: translateZ(0); /* Force hardware acceleration */
+    -webkit-transform: translateZ(0);
     transform: translateZ(0);
 }
 
@@ -546,9 +551,9 @@ footer {
     height: 100%;
     background: linear-gradient(
         135deg, 
-        rgba(0, 64, 128, 0.8) 0%, 
-        rgba(0, 64, 128, 0.6) 50%, 
-        rgba(255, 102, 0, 0.7) 100%
+        rgba(0, 64, 128, 0.7) 0%, 
+        rgba(0, 64, 128, 0.5) 50%, 
+        rgba(255, 102, 0, 0.6) 100%
     );
     z-index: 2;
 }
@@ -567,7 +572,7 @@ footer {
     font-size: 3.5em;
     margin-bottom: 0.5em;
     line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-weight: bold;
 }
 
@@ -576,7 +581,7 @@ footer {
     font-size: 1.4em;
     margin-bottom: 2em;
     line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .hero-buttons {
@@ -594,7 +599,7 @@ footer {
     transition: all 0.3s ease;
     display: inline-block;
     font-size: 1.1em;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .btn-primary {
@@ -607,7 +612,7 @@ footer {
     background-color: #e65c00;
     border-color: #e65c00;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.5);
 }
 
 .btn-secondary {
@@ -620,7 +625,7 @@ footer {
     background-color: white;
     color: #004080;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
 /* Quick Links Section */
@@ -834,21 +839,24 @@ footer {
     
     /* Hero section */
     .hero-section {
-        min-height: 70vh;
-        padding: 1rem;
+        min-height: 80vh;
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
     }
     
     .hero-slide-bg {
-        /* Ensure background images work on mobile */
         background-attachment: scroll !important;
         background-size: cover !important;
         background-position: center center !important;
-        min-height: 70vh;
+        min-height: 80vh;
         will-change: opacity;
     }
     
     .hero-content {
-        padding: 1.5rem;
+        padding: 2rem 1rem;
         max-width: 90%;
     }
     
@@ -985,16 +993,19 @@ footer {
     }
     
     .hero-section {
-        min-height: 60vh;
-        padding: 0.5rem;
+        min-height: 70vh;
+        width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
     }
     
     .hero-slide-bg {
-        /* Force background images on small mobile devices */
         background-attachment: scroll !important;
         background-size: cover !important;
         background-position: center center !important;
-        min-height: 60vh;
+        min-height: 70vh;
         will-change: opacity;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
