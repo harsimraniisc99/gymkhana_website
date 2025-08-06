@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Hero slideshow
 document.addEventListener('DOMContentLoaded', function() {
-    const slides = document.querySelectorAll('.hero-slide');
+    const slides = document.querySelectorAll('.hero-slide-bg');
     if (slides.length === 0) return;
     
     let currentSlide = 0;
@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
         slides[currentSlide].classList.add('active');
     }
     
-    // Change slide every 4 seconds
-    setInterval(nextSlide, 4000);
+    // Change slide every 5 seconds
+    setInterval(nextSlide, 5000);
 });
 
 // Placeholder for future interactivity

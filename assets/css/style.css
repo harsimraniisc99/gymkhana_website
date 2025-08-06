@@ -499,101 +499,125 @@ footer {
 /* Homepage Styles */
 /* Hero Section */
 .hero-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3em;
-    align-items: center;
-    margin: 3em 0;
-    padding: 2em 0;
-}
-
-.hero-content h2 {
-    color: #004080;
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-    line-height: 1.2;
-}
-
-.hero-content p {
-    color: #666;
-    font-size: 1.2em;
-    margin-bottom: 2em;
-    line-height: 1.6;
-}
-
-.hero-buttons {
+    position: relative;
+    min-height: 80vh;
     display: flex;
-    gap: 1em;
-}
-
-.btn-primary, .btn-secondary {
-    padding: 0.8em 1.5em;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.btn-primary {
-    background-color: #ff6600;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #e65c00;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: #004080;
-    border: 2px solid #004080;
-}
-
-.btn-secondary:hover {
-    background-color: #004080;
-    color: white;
-    transform: translateY(-2px);
-}
-
-.hero-image {
-    text-align: center;
-    position: relative;
-}
-
-.hero-slideshow {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    height: 350px;
-    margin: 0 auto;
-    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin: 0;
+    padding: 0;
 }
 
-.hero-slide {
+.hero-background-slideshow {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    z-index: 1;
 }
 
-.hero-slide.active {
+.hero-slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide-bg.active {
     opacity: 1;
 }
 
-.main-hero-img {
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    height: 100%;
+    background: linear-gradient(
+        135deg, 
+        rgba(0, 64, 128, 0.8) 0%, 
+        rgba(0, 64, 128, 0.6) 50%, 
+        rgba(255, 102, 0, 0.7) 100%
+    );
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-content h2 {
+    color: white;
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.hero-content p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.4em;
+    margin-bottom: 2em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.1em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+    background-color: #ff6600;
+    color: white;
+    border: 2px solid #ff6600;
+}
+
+.btn-primary:hover {
+    background-color: #e65c00;
+    border-color: #e65c00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #004080;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
 
 /* Quick Links Section */
@@ -807,31 +831,33 @@ footer {
     
     /* Hero section */
     .hero-section {
-        grid-template-columns: 1fr;
-        gap: 2em;
-        text-align: center;
-        margin: 2em 0;
+        min-height: 70vh;
+        padding: 1rem;
+    }
+    
+    .hero-content {
+        padding: 1.5rem;
+        max-width: 90%;
     }
     
     .hero-content h2 {
-        font-size: 2em;
+        font-size: 2.5em;
         margin-bottom: 0.8em;
     }
     
     .hero-content p {
-        font-size: 1.1em;
+        font-size: 1.2em;
         margin-bottom: 1.5em;
     }
     
     .hero-buttons {
-        justify-content: center;
         flex-direction: column;
         align-items: center;
-        gap: 0.8em;
+        gap: 1em;
     }
     
     .btn-primary, .btn-secondary {
-        width: 200px;
+        width: 250px;
         text-align: center;
         padding: 1em 1.5em;
         font-size: 1em;
@@ -946,8 +972,18 @@ footer {
         min-width: 100px;
     }
     
+    .hero-section {
+        min-height: 60vh;
+        padding: 0.5rem;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+        max-width: 95%;
+    }
+    
     .hero-content h2 {
-        font-size: 1.6em;
+        font-size: 2em;
     }
     
     .hero-content p {
@@ -955,7 +991,7 @@ footer {
     }
     
     .btn-primary, .btn-secondary {
-        width: 180px;
+        width: 200px;
         padding: 0.8em 1.2em;
         font-size: 0.9em;
     }
@@ -1221,5 +1257,86 @@ table td {
     
     .contact-item:last-child {
         margin-bottom: 0;
+    }
+}
+
+/* System Cards Styling */
+.system-card {
+    background: linear-gradient(135deg, #004080 0%, #0056b3 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 64, 128, 0.3);
+    transition: all 0.3s ease;
+}
+
+.system-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 64, 128, 0.4);
+}
+
+.system-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.system-content h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.system-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.system-link {
+    display: inline-block;
+    background: #ff6600;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 102, 0, 0.3);
+}
+
+.system-link:hover {
+    background: #e55a00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
+}
+
+/* Mobile responsive for system cards */
+@media (max-width: 768px) {
+    .system-content {
+        padding: 1.5rem;
+    }
+    
+    .system-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .system-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .system-content {
+        padding: 1rem;
+    }
+    
+    .system-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .system-content p {
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
     }
 }
