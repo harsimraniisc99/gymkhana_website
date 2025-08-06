@@ -525,10 +525,13 @@ footer {
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: scroll; /* Changed from fixed for mobile compatibility */
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
+    -webkit-transform: translateZ(0); /* Force hardware acceleration */
+    transform: translateZ(0);
 }
 
 .hero-slide-bg.active {
@@ -835,6 +838,15 @@ footer {
         padding: 1rem;
     }
     
+    .hero-slide-bg {
+        /* Ensure background images work on mobile */
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        min-height: 70vh;
+        will-change: opacity;
+    }
+    
     .hero-content {
         padding: 1.5rem;
         max-width: 90%;
@@ -975,6 +987,17 @@ footer {
     .hero-section {
         min-height: 60vh;
         padding: 0.5rem;
+    }
+    
+    .hero-slide-bg {
+        /* Force background images on small mobile devices */
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        min-height: 60vh;
+        will-change: opacity;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
     
     .hero-content {
