@@ -1047,12 +1047,48 @@ footer {
     }
     
     /* Facilities extra small mobile */
+    .facilities-grid {
+        padding: 0 0.25rem;
+        gap: 1rem;
+    }
+    
+    .facility-card {
+        margin: 0;
+        border-radius: 8px;
+    }
+    
+    .facility-content {
+        padding: 1rem;
+    }
+    
+    .facility-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .facility-content p {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.4;
+    }
+    
     .facility-image {
-        height: 180px;
+        height: 160px;
+    }
+    
+    .intro-section {
+        margin: 0 0.25rem 1.5rem 0.25rem;
+        padding: 1rem 0.75rem;
     }
     
     .intro-section h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .intro-section p {
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
 }
 
