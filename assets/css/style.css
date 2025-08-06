@@ -1,0 +1,886 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+header {
+    background-color: #004080;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+nav {
+    background-color: #ff6600;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav a {
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+nav a:hover {
+    background-color: #e65c00;
+}
+.container {
+    padding: 2em;
+}
+.card {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 1em;
+    margin: 1em 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+footer {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+/* Clubs Grid Layout */
+.clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+.club-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 1.5em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+.club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.club-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    transition: transform 0.3s ease;
+}
+
+.club-card:hover .club-card-image {
+    transform: scale(1.05);
+}
+
+.club-card h3 {
+    color: #004080;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
+}
+
+.club-card p {
+    color: #666;
+    margin-bottom: 1em;
+    line-height: 1.5;
+}
+
+.club-link {
+    background-color: #ff6600;
+    color: white;
+    padding: 0.7em 1.2em;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.club-link:hover {
+    background-color: #e65c00;
+}
+
+.clubs-section h2 {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 1em;
+    font-size: 2.2em;
+}
+
+/* Committee Section Styles */
+.committee-section {
+    margin-top: 2em;
+}
+
+.committee-section h2 {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 0.5em;
+    font-size: 2.2em;
+}
+
+.committee-section > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2em;
+    font-size: 1.1em;
+}
+
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+.committee-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.committee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.committee-card h3 {
+    color: #004080;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.committee-card .position {
+    color: #ff6600;
+    font-weight: bold;
+    margin-bottom: 0.8em;
+    font-size: 1.1em;
+}
+
+.committee-card .email {
+    margin-bottom: 0;
+}
+
+.committee-card .email a {
+    color: #004080;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+}
+
+.committee-card .email a:hover {
+    border-bottom-color: #004080;
+}
+
+/* Admin Section Styles */
+.admin-section {
+    margin-top: 2em;
+}
+
+.admin-section h2 {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 0.5em;
+    font-size: 2.2em;
+}
+
+.admin-section > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2em;
+    font-size: 1.1em;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2em;
+    margin-top: 2em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 2.5em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    border-left: 4px solid #004080;
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.admin-card h3 {
+    color: #004080;
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.admin-card .position {
+    color: #ff6600;
+    font-weight: bold;
+    margin-bottom: 0;
+    font-size: 1.2em;
+}
+
+/* Events Section Styles */
+.events-section {
+    margin-top: 2em;
+}
+
+.events-section h2 {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 0.5em;
+    font-size: 2.2em;
+}
+
+.events-section > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2em;
+    font-size: 1.1em;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5em;
+    margin-top: 2em;
+}
+
+.event-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 1.8em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #ff6600;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.event-card h3 {
+    color: #004080;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.event-card .event-type {
+    color: #ff6600;
+    font-weight: bold;
+    margin-bottom: 0.8em;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.event-card p:not(.event-type):not(.event-details p) {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.2em;
+}
+
+.event-details {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1em;
+    margin-top: 1em;
+}
+
+.event-timing {
+    color: #777;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Facilities Page Styles */
+.intro-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    margin: 0 1rem 3rem 1rem;
+}
+
+.intro-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.intro-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.facility-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    border: 1px solid #e1e8ed;
+}
+
+.facility-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.facility-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.facility-card:hover .facility-image {
+    transform: scale(1.05);
+}
+
+.facility-content {
+    padding: 1.5rem;
+}
+
+.facility-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.facility-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Club Details with Image Layout */
+.club-content-with-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    align-items: start;
+    margin-top: 2em;
+}
+
+.club-text .card {
+    margin: 0;
+}
+
+.club-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.club-feature-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.club-feature-image:hover {
+    transform: scale(1.05);
+}
+
+/* Homepage Styles */
+/* Hero Section */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+    align-items: center;
+    margin: 3em 0;
+    padding: 2em 0;
+}
+
+.hero-content h2 {
+    color: #004080;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1em;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #ff6600;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #004080;
+    border: 2px solid #004080;
+}
+
+.btn-secondary:hover {
+    background-color: #004080;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    text-align: center;
+    position: relative;
+}
+
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.main-hero-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Quick Links Section */
+.quick-links {
+    margin: 4em 0;
+}
+
+.quick-links h2 {
+    text-align: center;
+    color: #004080;
+    font-size: 2.2em;
+    margin-bottom: 2em;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+}
+
+.quick-link-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 1.5em;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quick-link-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+.quick-link-card h3 {
+    color: #004080;
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
+}
+
+.quick-link-card p {
+    color: #666;
+    margin-bottom: 1.5em;
+    line-height: 1.5;
+}
+
+.quick-link-card a {
+    background-color: #ff6600;
+    color: white;
+    padding: 0.6em 1.2em;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.quick-link-card a:hover {
+    background-color: #e65c00;
+}
+
+/* Gallery Section */
+.gallery-section {
+    margin: 4em 0;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    color: #004080;
+    font-size: 2.2em;
+    margin-bottom: 2em;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Call to Action Section */
+.cta-section {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 3em 2em;
+    margin: 4em 0 2em 0;
+    border-radius: 12px;
+}
+
+.cta-content h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.cta-content p {
+    font-size: 1.1em;
+    margin-bottom: 2em;
+    opacity: 0.9;
+}
+
+.cta-section .btn-primary {
+    background-color: #ff6600;
+    font-size: 1.1em;
+    padding: 1em 2em;
+}
+
+.cta-section .btn-primary:hover {
+    background-color: #e65c00;
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* General mobile adjustments */
+    .container {
+        padding: 1em;
+    }
+    
+    /* Header */
+    header h1 {
+        font-size: 1.8em;
+        padding: 0.8em;
+    }
+    
+    /* Navigation */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        padding: 0.8em 1.5em;
+        display: block;
+        text-align: center;
+        min-width: 120px;
+    }
+    
+    /* Hero section */
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 2em;
+        text-align: center;
+        margin: 2em 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 2em;
+        margin-bottom: 0.8em;
+    }
+    
+    .hero-content p {
+        font-size: 1.1em;
+        margin-bottom: 1.5em;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8em;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 200px;
+        text-align: center;
+        padding: 1em 1.5em;
+        font-size: 1em;
+    }
+    
+    /* Quick links */
+    .quick-links-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+    
+    .quick-link-card {
+        padding: 1.2em;
+    }
+    
+    .quick-link-card img {
+        height: 120px;
+    }
+    
+    /* Gallery */
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.8em;
+    }
+    
+    .gallery-item img {
+        height: 150px;
+    }
+    
+    /* CTA section */
+    .cta-section {
+        padding: 2em 1em;
+        margin: 2em 0 1em 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.6em;
+    }
+    
+    .cta-content p {
+        font-size: 1em;
+    }
+    
+    /* Cards and grids for other pages */
+    .clubs-grid, .committee-grid, .admin-grid, .events-grid, .facilities-grid {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+    
+    .club-card, .committee-card, .admin-card, .event-card, .facility-card {
+        padding: 1.2em;
+    }
+    
+    /* Facilities mobile styles */
+    .intro-section {
+        margin: 0 0.5rem 2rem 0.5rem;
+        padding: 1.5rem 1rem;
+    }
+    
+    .intro-section h2 {
+        font-size: 2rem;
+    }
+    
+    .intro-section p {
+        font-size: 1rem;
+    }
+    
+    .facilities-grid {
+        padding: 0 0.5rem;
+    }
+    
+    .facility-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Club content with image mobile layout */
+    .club-content-with-image {
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+    }
+    
+    .club-image {
+        order: -1; /* Show image first on mobile */
+    }
+    
+    .club-feature-image {
+        max-width: 100%;
+    }
+    
+    /* Section headings */
+    .clubs-section h2, .committee-section h2, .admin-section h2, .events-section h2 {
+        font-size: 1.8em;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 1.5em 1em;
+        font-size: 0.9em;
+    }
+}
+
+/* Additional mobile breakpoint for very small devices */
+@media (max-width: 480px) {
+    /* Extra small devices */
+    nav {
+        padding: 0.5em 0;
+    }
+    
+    nav a {
+        padding: 0.6em 1em;
+        font-size: 0.9em;
+        min-width: 100px;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.6em;
+    }
+    
+    .hero-content p {
+        font-size: 1em;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 180px;
+        padding: 0.8em 1.2em;
+        font-size: 0.9em;
+    }
+    
+    .quick-links h2, .gallery-section h2 {
+        font-size: 1.6em;
+    }
+    
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cta-content h2 {
+        font-size: 1.4em;
+    }
+    
+    .main-hero-img {
+        max-width: 100%;
+    }
+    
+    /* Facilities extra small mobile */
+    .facility-image {
+        height: 180px;
+    }
+    
+    .intro-section h2 {
+        font-size: 1.8rem;
+    }
+}
